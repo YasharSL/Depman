@@ -1,0 +1,100 @@
+name: Release
+
+# Pushing a tag such as v0.2.0 builds the packages and publishes a GitHub Release.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    uses: ./.github/workflows/ci.yml
+
+  deb:
+    name: Debian / Ubuntu package
+    needs: check
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y debhelper dh-python pybuild-plugin-pyproject \
+            python3-all python3-setuptools python3-pytest
+      - run: make deb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deb
+          path: dist/*.deb
+          if-no-files-found: error
+
+  rpm:
+    name: Fedora package
+    needs: check
+    runs-on: ubuntu-24.04
+    container: fedora:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: dnf install -y rpm-build make
+      - name: Build the RPM from this checkout
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          mkdir -p ~/rpmbuild/SOURCES "/tmp/source/Depman-$version"
+          cp -r . "/tmp/source/Depman-$version/"
+          tar -C /tmp/source --exclude=.git -czf ~/rpmbuild/SOURCES/depman-$version.tar.gz \
+            "Depman-$version"
+          rpmbuild -bb packaging/fedora/depman.spec
+          mkdir -p dist && cp ~/rpmbuild/RPMS/noarch/*.rpm dist/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rpm
+          path: dist/*.rpm
+          if-no-files-found: error
+
+  arch:
+    name: Arch package
+    needs: check
+    runs-on: ubuntu-24.04
+    container: archlinux:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: pacman -Syu --noconfirm --needed base-devel python python-gobject gtk4 libadwaita polkit
+      - name: Build with makepkg (it refuses to run as root)
+        run: |
+          useradd -m builder
+          cp -r packaging/arch /home/builder/pkg
+          chown -R builder /home/builder/pkg
+          su builder -c "cd /home/builder/pkg && makepkg"
+          mkdir -p dist && cp /home/builder/pkg/*.pkg.tar.zst dist/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arch
+          path: dist/*.pkg.tar.zst
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    needs: [deb, rpm, arch]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the tag matches the project version
+        run: |
+          version="$(sed -n 's/^version = "\(.*\)"/\1/p' pyproject.toml)"
+          test "v$version" = "$GITHUB_REF_NAME"
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/* \
+            --title "DepMan ${GITHUB_REF_NAME#v}" --generate-notes

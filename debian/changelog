@@ -1,3 +1,9 @@
+depman (0.1.1) noble; urgency=medium
+
+  * Packages are now built and published by GitHub Actions.
+
+ -- YSLdev <yashar.soleimani.dev@gmail.com>  Thu, 08 Oct 2026 14:30:00 +0000
+
 depman (0.1.0) noble; urgency=medium
 
   * Initial release.

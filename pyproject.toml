@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "depman"
-version = "0.1.0"
+version = "0.1.1"
 description = "One window for every package manager on your Linux system"
 requires-python = ">=3.12"
-license = "MIT"
+license = { text = "MIT" }
 readme = "README.md"
 authors = [{ name = "YSLdev", email = "yashar.soleimani.dev@gmail.com" }]
 dependencies = []

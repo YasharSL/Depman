@@ -2,6 +2,10 @@
 
 **One window for every package manager on your Linux system.**
 
+[![CI](https://github.com/YasharSL/Depman/actions/workflows/ci.yml/badge.svg)](https://github.com/YasharSL/Depman/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/YasharSL/Depman)](https://github.com/YasharSL/Depman/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Linux software comes from many places at once: the distribution's own packages, Snap, Flatpak,
 `pip`, `npm`, `cargo`. Finding out what is installed, where it lives and how to get rid of it
 means remembering a different command for each. DepMan puts all of them in one simple window.
@@ -57,7 +61,22 @@ current distributions. DepMan has no other dependencies.
 
 ## Install
 
-First install the requirements with your distribution's package manager:
+Download the package for your distribution from the
+[latest release](https://github.com/YasharSL/Depman/releases/latest) and install it. Your
+package manager pulls in GTK and the other requirements automatically.
+
+| Distribution | File | Install command |
+|---|---|---|
+| Ubuntu / Debian | `depman_<version>_all.deb` | `sudo apt install ./depman_*_all.deb` |
+| Fedora | `depman-<version>-1.fc<N>.noarch.rpm` | `sudo dnf install ./depman-*.noarch.rpm` |
+| Arch | `depman-<version>-1-any.pkg.tar.zst` | `sudo pacman -U depman-*-any.pkg.tar.zst` |
+
+Start it with `depman` or pick **DepMan** from your application menu. Remove it the usual way:
+`sudo apt remove depman`, `sudo dnf remove depman` or `sudo pacman -R depman`.
+
+### From source (any distribution)
+
+Install the requirements first:
 
 | Distribution | Command |
 |---|---|
@@ -66,29 +85,26 @@ First install the requirements with your distribution's package manager:
 | Arch | `sudo pacman -S python-gobject gtk4 libadwaita make git` |
 | openSUSE | `sudo zypper install python3-gobject typelib-1_0-Gtk-4_0 typelib-1_0-Adw-1 make git` (package names not yet verified) |
 
-Then install DepMan. This works the same on every distribution:
+Then:
 
 ```sh
 git clone https://github.com/YasharSL/Depman.git
 cd Depman
-sudo make install
+sudo make install        # remove again with: sudo make uninstall
 ```
-
-Start it with `depman` or pick **DepMan** from your application menu.
-Remove it again with `sudo make uninstall`.
 
 To try it without installing anything, run `python3 -m depman` inside the cloned folder.
 
-### Native packages
+### Building the packages yourself
 
-If you prefer a package your system's package manager tracks:
-
-- **Debian / Ubuntu:** `make deb`, then `sudo apt install ./dist/depman_0.1.0_all.deb`
+- **Debian / Ubuntu:** `make deb` writes the `.deb` into `dist/`
 - **Arch:** `cd packaging/arch && makepkg -si`
 - **Fedora:** build `packaging/fedora/depman.spec` with `rpmbuild`
 
-The Arch and Fedora recipes download the `v0.1.0` release from GitHub. Publishing to a PPA or
-your own apt repository is described in [docs/distributing.md](docs/distributing.md).
+Every release is built by GitHub Actions: pushing a `vX.Y.Z` tag runs the checks, builds all
+three packages and publishes them on the [Releases](https://github.com/YasharSL/Depman/releases)
+page. Publishing to a PPA or your own apt repository is described in
+[docs/distributing.md](docs/distributing.md).
 
 ## Safety
 

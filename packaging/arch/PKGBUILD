@@ -1,6 +1,6 @@
 # Maintainer: YSLdev <yashar.soleimani.dev@gmail.com>
 pkgname=depman
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc="One window for every package manager on your Linux system"
 arch=('any')
