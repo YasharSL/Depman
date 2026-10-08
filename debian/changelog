@@ -1,4 +1,4 @@
-depman (0.1.2) noble; urgency=medium
+depman (0.1.3) noble; urgency=medium
 
   * Packages are now built and published by GitHub Actions.
 

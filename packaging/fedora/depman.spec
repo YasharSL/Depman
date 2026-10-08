@@ -1,5 +1,5 @@
 Name:           depman
-Version:        0.1.2
+Version:        0.1.3
 Release:        1%{?dist}
 Summary:        One window for every package manager on your Linux system
 
@@ -39,7 +39,7 @@ or reinstall it.
 %{_datadir}/applications/io.github.depman.DepMan.desktop
 
 %changelog
-* Thu Oct 08 2026 YSLdev <yashar.soleimani.dev@gmail.com> - 0.1.2-1
+* Thu Oct 08 2026 YSLdev <yashar.soleimani.dev@gmail.com> - 0.1.3-1
 - Packages are now built and published by GitHub Actions
 
 * Thu Oct 08 2026 YSLdev <yashar.soleimani.dev@gmail.com> - 0.1.0-1
