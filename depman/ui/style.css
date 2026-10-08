@@ -1,0 +1,48 @@
+/* Ubuntu look: orange accent, Ubuntu font when installed, plain flat rows. */
+@define-color accent_bg_color #E95420;
+@define-color accent_color #D34615;
+@define-color destructive_bg_color #C7162B;
+
+window {
+  font-family: "Ubuntu Sans", "Ubuntu", "Cantarell", sans-serif;
+}
+
+.package-list {
+  background-color: @card_bg_color;
+  border-radius: 8px;
+  border: 1px solid alpha(currentColor, 0.12);
+  margin: 0 12px 24px 12px;
+}
+
+.package-list > row {
+  padding: 10px 14px;
+}
+
+.scope-tag {
+  font-size: smaller;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background-color: alpha(currentColor, 0.1);
+}
+
+.note {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background-color: alpha(@warning_bg_color, 0.25);
+}
+
+.command {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: alpha(currentColor, 0.08);
+}
+
+.file-list {
+  padding: 12px;
+  font-size: smaller;
+}
+
+.log {
+  padding: 8px;
+  font-size: smaller;
+}

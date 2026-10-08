@@ -1,0 +1,30 @@
+[
+  {
+    "name": "PyGObject",
+    "version": "3.48.2",
+    "summary": "Python bindings for GObject Introspection",
+    "location": "/usr/lib/python3/dist-packages",
+    "installer": ""
+  },
+  {
+    "name": "requests",
+    "version": "2.32.3",
+    "summary": "Python HTTP for Humans.",
+    "location": "/home/test/.local/lib/python3.12/site-packages",
+    "installer": "pip"
+  },
+  {
+    "name": "ansible",
+    "version": "10.4.0",
+    "summary": "Radically simple IT automation",
+    "location": "/usr/local/lib/python3.12/dist-packages",
+    "installer": "pip"
+  },
+  {
+    "name": "dnf",
+    "version": "5.4.3.0",
+    "summary": "DNF bindings",
+    "location": "/usr/lib64/python3.14/site-packages",
+    "installer": "rpm"
+  }
+]

@@ -1,0 +1,29 @@
+Source: depman
+Section: admin
+Priority: optional
+Maintainer: YSLdev <yashar.soleimani.dev@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               pybuild-plugin-pyproject,
+               python3-all,
+               python3-setuptools,
+               python3-pytest <!nocheck>
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: depman
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         python3 (>= 3.12),
+         python3-gi,
+         gir1.2-gtk-4.0,
+         gir1.2-adw-1 (>= 1.5)
+Recommends: pkexec | policykit-1
+Description: one window for every package manager
+ DepMan detects the package managers installed on the system (APT, Snap,
+ Flatpak, pip, pipx, npm and Cargo) and lists what each one installed in
+ its own tab.
+ .
+ Each package has a page showing its version, description and where its
+ files live, with buttons to uninstall, purge, update or reinstall it.

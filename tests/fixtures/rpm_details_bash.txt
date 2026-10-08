@@ -1,0 +1,4 @@
+x86_648873537GPL-3.0-or-laterhttps://www.gnu.org/software/bashFedora ProjectUnspecifiedbash-5.3.9-3.fc44.src.rpmTue Aug 25 06:47:36 2026The GNU Bourne Again shell (Bash) is a shell or command language
+interpreter that is compatible with the Bourne shell (sh). Bash
+incorporates useful features from the Korn shell (ksh) and the C shell
+(csh). Most sh scripts can be run by bash without modification.

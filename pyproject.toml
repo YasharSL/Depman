@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "depman"
+version = "0.1.0"
+description = "One window for every package manager on your Linux system"
+requires-python = ">=3.12"
+license = "MIT"
+readme = "README.md"
+authors = [{ name = "YSLdev", email = "yashar.soleimani.dev@gmail.com" }]
+dependencies = []
+
+[project.scripts]
+depman = "depman.ui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["depman*"]
+
+[tool.setuptools.package-data]
+"depman.ui" = ["style.css"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W", "I", "B", "UP", "SIM", "C90", "PL", "N", "RET", "ARG", "ANN",
+    "BLE", "ERA", "PGH", "FA", "S110", "S602", "S604", "S605",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 8
+
+[tool.ruff.lint.pylint]
+max-args = 5
+max-statements = 40
+max-branches = 10
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004", "ANN", "ARG"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["ui: needs a display (run under xvfb-run)"]

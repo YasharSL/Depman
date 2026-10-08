@@ -1,0 +1,68 @@
+Name            : bash
+Version         : 5.3.20-1
+Description     : The GNU Bourne Again shell
+Architecture    : x86_64
+URL             : https://www.gnu.org/software/bash/bash.html
+Licenses        : GPL-3.0-or-later
+Groups          : None
+Provides        : sh
+Depends On      : readline  libreadline.so=8-64  glibc  ncurses
+Optional Deps   : bash-completion: for tab completion
+Required By     : audit  base  bzip2  ca-certificates-utils  device-mapper  e2fsprogs  gawk  gdbm  gettext  glib2  gnupg  gzip  icu  iptables  keyutils  krb5  libassuan  libgpg-error  libksba  libmakepkg-dropins  libpcap  libxml2  npth  pacman  systemd  xz
+Optional For    : ncurses  pcre2  tzdata
+Conflicts With  : None
+Replaces        : None
+Installed Size  : 9.59 MiB
+Packager        : Tobias Powalowski <tpowa@archlinux.org>
+Build Date      : Tue Sep 15 19:47:19 2026
+Install Date    : Sun Oct  4 00:00:00 2026
+Install Reason  : Installed as a dependency for another package
+Install Script  : Yes
+Validated By    : Signature
+
+Name            : glibc
+Version         : 2.44+r50+g1848099f063e-1
+Description     : GNU C Library
+Architecture    : x86_64
+URL             : https://www.gnu.org/software/libc
+Licenses        : GPL-2.0-or-later  LGPL-2.1-or-later
+Groups          : None
+Provides        : None
+Depends On      : linux-api-headers>=4.10  tzdata  filesystem
+Optional Deps   : gd: for memusagestat
+                  perl: for mtrace
+Required By     : acl  attr  audit  base  bash  binutils  brotli  bzip2  coreutils  cryptsetup  dbus  dbus-broker  device-mapper  expat  file  findutils  gawk  gcc-libs  gdbm  gettext  glib2  gmp  gnupg  gnutls  gpgme  grep  gzip  icu  iproute2  iptables  jansson  json-c  kbd  keyutils  kmod  krb5  leancrypto  libarchive  libasan  libassuan  libatomic  libbpf  libcap  libcap-ng  libelf  libevent  libffi  libgcc  libgcrypt  libgfortran  libgomp  libgpg-error  libhwasan  libksba  liblsan  libmnl  libnetfilter_conntrack  libnfnetlink  libnftnl  libnghttp2  libnghttp3  libngtcp2  libnl  libnsl  libobjc  libp11-kit  libpcap  libquadmath  libsasl  libseccomp  libsecret  libssh2  libstdc++  libtasn1  libtirpc  libtsan  libubsan  libunistring  libusb  libverto  libxcrypt  libxml2  lmdb  lz4  mpfr  ncurses  nettle  nftables  npth  openssl  p11-kit  pacman  pam  pciutils  pcre2  pinentry  popt  procps-ng  readline  sed  shadow  sqlite  systemd  systemd-libs  tar  tpm2-tss  util-linux  util-linux-libs  xz  zlib  zstd
+Optional For    : tzdata
+Conflicts With  : None
+Replaces        : None
+Installed Size  : 50.66 MiB
+Packager        : Frederik Schwan <freswa@archlinux.org>
+Build Date      : Sun Sep 27 16:35:47 2026
+Install Date    : Sun Oct  4 00:00:00 2026
+Install Reason  : Installed as a dependency for another package
+Install Script  : No
+Validated By    : Signature
+
+Name            : pacman
+Version         : 7.1.0.r9.g54d9411-2
+Description     : A library-based package manager with dependency support
+Architecture    : x86_64
+URL             : https://www.archlinux.org/pacman/
+Licenses        : GPL-2.0-or-later
+Groups          : None
+Provides        : libalpm.so=16-64
+Depends On      : bash  coreutils  curl  libcurl.so=4-64  gawk  gettext  glibc  gnupg  gpgme  libgpgme.so=45-64  grep  libarchive  libarchive.so=13-64  openssl  libcrypto.so=3-64  pacman-mirrorlist  systemd  libmakepkg-dropins
+Optional Deps   : base-devel: required to use makepkg
+                  perl-locale-gettext: translation support in makepkg-template
+Required By     : archlinux-keyring  base
+Optional For    : None
+Conflicts With  : None
+Replaces        : None
+Installed Size  : 5.04 MiB
+Packager        : Christian Hesse <eworm@archlinux.org>
+Build Date      : Wed May  6 08:46:32 2026
+Install Date    : Sun Oct  4 00:00:00 2026
+Install Reason  : Installed as a dependency for another package
+Install Script  : No
+Validated By    : Signature
+

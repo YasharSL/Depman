@@ -1,0 +1,6 @@
+bash	5.3.9-3.fc44	bash-5.3.9-3.fc44.x86_64	The GNU Bourne Again shell
+glibc	2.43-8.fc44	glibc-2.43-8.fc44.x86_64	The GNU libc libraries
+dnf5	5.4.3.0-2.fc44	dnf5-5.4.3.0-2.fc44.x86_64	Command-line package manager
+rpm	6.0.2-1.fc44	rpm-6.0.2-1.fc44.x86_64	The RPM package management system
+gpg-pubkey	36f612dcf27f7d1a48a835e4dbfcf71c6d9f90a6-6786af3b	gpg-pubkey-36f612dcf27f7d1a48a835e4dbfcf71c6d9f90a6-6786af3b	Fedora (44) <fedora-44-primary@fedoraproject.org> public key
+gpg-pubkey	105ef944-65ca83d1	gpg-pubkey-105ef944-65ca83d1	Fedora (42) <fedora-42-primary@fedoraproject.org> public key

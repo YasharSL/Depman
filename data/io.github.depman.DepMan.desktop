@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=DepMan
+GenericName=Package Manager
+Comment=See and remove packages from every package manager in one window
+Exec=depman
+Icon=system-software-install
+Terminal=false
+Categories=System;PackageManager;GTK;
+Keywords=apt;snap;flatpak;pip;npm;cargo;uninstall;purge;packages;
+StartupNotify=true

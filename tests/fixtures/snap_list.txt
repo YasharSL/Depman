@@ -1,0 +1,4 @@
+Name    Version   Rev    Tracking       Publisher    Notes
+core24  20260410  1643   latest/stable  canonical**  base
+nmap    7.95      5184   latest/stable  maxiberta*   -
+snapd   2.77.1    28254  latest/stable  canonical**  snapd

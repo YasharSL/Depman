@@ -1,0 +1,32 @@
+{
+  "name": "lib",
+  "dependencies": {
+    "npm": {
+      "version": "10.8.2",
+      "path": "/usr/lib/node_modules/npm",
+      "description": "a package manager for JavaScript",
+      "license": "Artistic-2.0",
+      "homepage": "https://docs.npmjs.com/",
+      "repository": {"type": "git", "url": "git+https://github.com/npm/cli.git"},
+      "author": {"name": "GitHub Inc."},
+      "bin": {"npm": "bin/npm-cli.js", "npx": "bin/npx-cli.js"},
+      "dependencies": {"semver": {"version": "7.6.3"}}
+    },
+    "@angular/cli": {
+      "version": "18.2.7",
+      "path": "/home/test/.npm-global/lib/node_modules/@angular/cli",
+      "description": "CLI tool for Angular",
+      "license": "MIT",
+      "bin": {"ng": "bin/ng.js"}
+    },
+    "typescript": {
+      "version": "5.6.2",
+      "path": "/home/test/.npm-global/lib/node_modules/typescript",
+      "description": "TypeScript is a language for application scale JavaScript development",
+      "license": "Apache-2.0",
+      "author": "Microsoft Corp.",
+      "homepage": "https://www.typescriptlang.org/",
+      "bin": {"tsc": "bin/tsc", "tsserver": "bin/tsserver"}
+    }
+  }
+}

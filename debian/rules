@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+export PYBUILD_NAME = depman
+# The UI smoke test needs a display, which package builders do not have.
+export PYBUILD_TEST_ARGS = -m "not ui"
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild

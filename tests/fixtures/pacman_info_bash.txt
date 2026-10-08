@@ -1,0 +1,22 @@
+Name            : bash
+Version         : 5.3.20-1
+Description     : The GNU Bourne Again shell
+Architecture    : x86_64
+URL             : https://www.gnu.org/software/bash/bash.html
+Licenses        : GPL-3.0-or-later
+Groups          : None
+Provides        : sh
+Depends On      : readline  libreadline.so=8-64  glibc  ncurses
+Optional Deps   : bash-completion: for tab completion
+Required By     : audit  base  bzip2  ca-certificates-utils  device-mapper  e2fsprogs  gawk  gdbm  gettext  glib2  gnupg  gzip  icu  iptables  keyutils  krb5  libassuan  libgpg-error  libksba  libmakepkg-dropins  libpcap  libxml2  npth  pacman  systemd  xz
+Optional For    : ncurses  pcre2  tzdata
+Conflicts With  : None
+Replaces        : None
+Installed Size  : 9.59 MiB
+Packager        : Tobias Powalowski <tpowa@archlinux.org>
+Build Date      : Tue Sep 15 19:47:19 2026
+Install Date    : Sun Oct  4 00:00:00 2026
+Install Reason  : Installed as a dependency for another package
+Install Script  : Yes
+Validated By    : Signature
+

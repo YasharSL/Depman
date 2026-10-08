@@ -1,0 +1,8 @@
+cargo-edit v0.12.3:
+    cargo-add
+    cargo-rm
+    cargo-upgrade
+mytool v0.1.0 (/home/test/src/mytool):
+    mytool
+ripgrep v14.1.0:
+    rg

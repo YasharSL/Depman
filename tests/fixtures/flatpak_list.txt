@@ -1,0 +1,3 @@
+org.mozilla.firefox	Firefox	131.0	stable	system	app/org.mozilla.firefox/x86_64/stable	Fast, Private & Safe Web Browser
+org.gnome.Platform	GNOME Application Platform version 46		46	system	runtime/org.gnome.Platform/x86_64/46	Shared libraries used by GNOME applications
+com.spotify.Client	Spotify	1.2.45	stable	user	app/com.spotify.Client/x86_64/stable	Online music streaming service

@@ -1,0 +1,18 @@
+# Maintainer: YSLdev <yashar.soleimani.dev@gmail.com>
+pkgname=depman
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="One window for every package manager on your Linux system"
+arch=('any')
+url="https://github.com/YasharSL/Depman"
+license=('MIT')
+depends=('python' 'python-gobject' 'gtk4' 'libadwaita' 'polkit')
+makedepends=('make')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  cd "Depman-$pkgver"
+  make DESTDIR="$pkgdir" PREFIX=/usr install
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,35 @@
+name:    nmap
+summary: A free and open source utility for network discovery and security
+  auditing
+publisher: Maximiliano Bertacchini (maxiberta*)
+store-url: https://snapcraft.io/nmap
+contact:   https://github.com/maxiberta/nmap-snap/issues
+license:   GPL-2.0
+description: |
+  Nmap is a utility for network exploration or security auditing. It
+  supports ping scanning (determine which hosts are up), many port
+  scanning techniques, version detection (determine service protocols
+  and application versions listening behind ports), and TCP/IP
+  fingerprinting (remote host OS or device identification). Nmap also
+  offers flexible target and port specification, decoy/stealth scanning,
+  sunRPC scanning, and more. Most Unix and Windows platforms are
+  supported in both GUI and commandline modes.
+  
+  Once installed, this snap needs manually connecting to some plugs:
+  
+     sudo snap connect nmap:network-control
+  
+  Main website: https://nmap.org/
+commands:
+  - nmap.ncat
+  - nmap
+  - nmap.nping
+snap-id:      McFtwWmHVzBWwYSVtXzCdJ6Rt4STQPtl
+tracking:     latest/stable
+refresh-date: 21 days ago, at 02:16 +0330
+channels:
+  latest/stable:    7.95                  2026-09-10 (5184) 12.9MB -
+  latest/candidate: 7.95                  2026-09-10 (5184) 12.9MB -
+  latest/beta:      ^                                              
+  latest/edge:      v7.991-162-g6b9d95c5f 2026-10-05 (5331) 13.4MB -
+installed:          7.95                             (5184) 12.9MB -
