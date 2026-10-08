@@ -6,7 +6,12 @@ import pytest
 
 pytestmark = pytest.mark.ui
 
-ui_driver = pytest.importorskip("tests.ui_driver")
+try:
+    from tests import ui_driver
+except (ImportError, ValueError):
+    # gi is missing (ImportError) or has no GTK 4 / libadwaita typelibs (ValueError),
+    # as on a package build machine.
+    pytest.skip("GTK 4 and libadwaita are not available", allow_module_level=True)
 
 
 @pytest.fixture(scope="module")

@@ -12,8 +12,8 @@ Build the package and install it with apt, which pulls in GTK and libadwaita:
 
 ```sh
 sudo apt install debhelper dh-python pybuild-plugin-pyproject python3-all python3-setuptools python3-pytest
-make deb                                   # writes dist/depman_0.1.1_all.deb
-sudo apt install ./dist/depman_0.1.1_all.deb
+make deb                                   # writes dist/depman_0.1.2_all.deb
+sudo apt install ./dist/depman_0.1.2_all.deb
 depman                                     # also appears in the app menu as "DepMan"
 ```
 
@@ -40,14 +40,14 @@ Launchpad builds and hosts the package; users add it with one command.
 
    ```sh
    sudo apt install devscripts dput
-   debuild -S -sa                          # creates ../depman_0.1.1_source.changes
-   dput ppa:YOUR_LAUNCHPAD_ID/depman ../depman_0.1.1_source.changes
+   debuild -S -sa                          # creates ../depman_0.1.2_source.changes
+   dput ppa:YOUR_LAUNCHPAD_ID/depman ../depman_0.1.2_source.changes
    ```
 
    Run this from a copy of the repo on a Linux filesystem, not from a Windows-mounted folder.
 3. The release name in `debian/changelog` (`noble`) decides which Ubuntu release it is built
    for. To publish for another release, upload again with that name and a version such as
-   `0.1.1~oracular1`.
+   `0.1.2~oracular1`.
 4. Users install with:
 
    ```sh
@@ -70,7 +70,7 @@ An apt repository is a folder of static files, so any web host works, including 
    Architectures: amd64 arm64
    SignWith: YOUR_GPG_KEY_ID
    EOF
-   reprepro -b repo includedeb stable dist/depman_0.1.1_all.deb
+   reprepro -b repo includedeb stable dist/depman_0.1.2_all.deb
    gpg --export YOUR_GPG_KEY_ID > repo/depman.gpg
    ```
 
